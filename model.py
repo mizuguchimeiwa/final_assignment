@@ -5,14 +5,6 @@ import torch.nn.functional as F
 
 
 class Net(nn.Module):
-    """
-    Simple CNN for CIFAR-10 classification.
-    Architecture:
-        - 2 convolutional layers
-        - ReLU + MaxPooling
-        - 3 fully-connected layers
-        - Output: 10 classes
-    """
 
     def __init__(self) -> None:
         super().__init__()
@@ -27,11 +19,10 @@ class Net(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
-        Forward pass of the network.
         Input:
-            x: Tensor of shape (batch_size, 3, 32, 32)
+        x: (batch_size, 3, 32, 32)
         Output:
-            Tensor of shape (batch_size, 10)
+        (batch_size, 10)
         """
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))

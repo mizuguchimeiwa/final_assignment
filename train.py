@@ -9,7 +9,7 @@ from model import Net
 
 def create_dataloaders(batch_size: int = 4) -> Tuple[DataLoader, DataLoader, Tuple[str]]:
     """
-    Create CIFAR-10 train/test dataloaders.
+    Create CIFAR-10 train/test dataloaders
     """
     transform = transforms.Compose(
         [transforms.ToTensor(),
@@ -37,7 +37,7 @@ def create_dataloaders(batch_size: int = 4) -> Tuple[DataLoader, DataLoader, Tup
 
 def train(model: Net, trainloader: DataLoader, epochs: int = 2) -> None:
     """
-    Train the CNN model.
+    Train the CNN model
     """
     criterion = torch.nn.CrossEntropyLoss()
     optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
@@ -62,7 +62,7 @@ def train(model: Net, trainloader: DataLoader, epochs: int = 2) -> None:
 
 def evaluate(model: Net, testloader: DataLoader, classes: Tuple[str]) -> None:
     """
-    Evaluate model accuracy with CIFAR-10 test set.
+    Evaluate model accuracy 
     """
     correct = 0
     total = 0

@@ -1,5 +1,5 @@
 def main():
-    print("Hello from cifar10-cnn-improved!")
+    print("CIFAR-10 CNN improved version")
 
 
 if __name__ == "__main__":
